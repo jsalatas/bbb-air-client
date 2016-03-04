@@ -1,6 +1,5 @@
 package org.bigbluebutton.core.util {
 	
-	import com.freshplanet.nativeExtensions.AirCapabilities;
 	import flash.desktop.NativeApplication;
 	import flash.events.Event;
 	import flash.events.HTTPStatusEvent;
@@ -55,23 +54,23 @@ package org.bigbluebutton.core.util {
 		
 		private function setUserAgent():void {
 			// AirCapabilities ANE to get the device information
-			var airCap:AirCapabilities = new AirCapabilities();
-			var deviceName:String = airCap.getMachineName();
-			if (deviceName != "") {
-				// include device name in the user agent looking for the first ")" character as follows:
-				// Mozilla/5.0 (Android; U; pt-BR<; DEVICE NAME>) AppleWebKit/533.19.4 (KHTML, like Gecko) AdobeAIR/16.0
-				var userAgent:Array = _urlRequest.userAgent.split(")");
-				userAgent[0] += "; " + deviceName;
-				_urlRequest.userAgent = userAgent.join(")");
-			}
-			var OSVersion:String = airCap.getOSVersion();
-			if (OSVersion != "") {
-				// include os version in the user agent looking for the first ";" character as follows:
-				// Mozilla/5.0 (Android< OSVERSION>; U; pt-BR) AppleWebKit/533.19.4 (KHTML, like Gecko) AdobeAIR/16.0
-				var userAgent:Array = _urlRequest.userAgent.split(";");
-				userAgent[0] += " " + OSVersion;
-				_urlRequest.userAgent = userAgent.join(";");
-			}
+//			var airCap:AirCapabilities = new AirCapabilities();
+//			var deviceName:String = airCap.getMachineName();
+//			if (deviceName != "") {
+//				// include device name in the user agent looking for the first ")" character as follows:
+//				// Mozilla/5.0 (Android; U; pt-BR<; DEVICE NAME>) AppleWebKit/533.19.4 (KHTML, like Gecko) AdobeAIR/16.0
+//				var userAgent:Array = _urlRequest.userAgent.split(")");
+//				userAgent[0] += "; " + deviceName;
+//				_urlRequest.userAgent = userAgent.join(")");
+//			}
+//			var OSVersion:String = airCap.getOSVersion();
+//			if (OSVersion != "") {
+//				// include os version in the user agent looking for the first ";" character as follows:
+//				// Mozilla/5.0 (Android< OSVERSION>; U; pt-BR) AppleWebKit/533.19.4 (KHTML, like Gecko) AdobeAIR/16.0
+//				var userAgent:Array = _urlRequest.userAgent.split(";");
+//				userAgent[0] += " " + OSVersion;
+//				_urlRequest.userAgent = userAgent.join(";");
+//			}
 			var appXML:XML = NativeApplication.nativeApplication.applicationDescriptor;
 			var ns:Namespace = appXML.namespace();
 			// append client name and version to the end of the user agent
