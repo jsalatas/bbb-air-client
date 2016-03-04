@@ -3,10 +3,15 @@ package org.bigbluebutton.view.navigation.pages.status {
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.events.StageOrientationEvent;
+	
 	import mx.core.FlexGlobals;
+	import mx.core.mx_internal;
 	import mx.events.ItemClickEvent;
 	import mx.events.ResizeEvent;
 	import mx.resources.ResourceManager;
+	
+	import spark.events.IndexChangeEvent;
+	
 	import org.bigbluebutton.command.MoodSignal;
 	import org.bigbluebutton.model.IUserSession;
 	import org.bigbluebutton.model.IUserUISession;
@@ -14,8 +19,10 @@ package org.bigbluebutton.view.navigation.pages.status {
 	import org.bigbluebutton.model.UserList;
 	import org.bigbluebutton.view.navigation.pages.PagesENUM;
 	import org.bigbluebutton.view.navigation.pages.disconnect.enum.DisconnectEnum;
+	
 	import robotlegs.bender.bundles.mvcs.Mediator;
-	import spark.events.IndexChangeEvent;
+	
+	use namespace mx_internal;
 	
 	public class StatusViewMediator extends Mediator {
 		

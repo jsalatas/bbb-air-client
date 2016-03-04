@@ -3,11 +3,17 @@ package org.bigbluebutton.view.navigation.pages.chatrooms {
 	import flash.events.Event;
 	import flash.events.StageOrientationEvent;
 	import flash.utils.Dictionary;
+	
 	import mx.collections.ArrayCollection;
 	import mx.core.FlexGlobals;
+	import mx.core.mx_internal;
 	import mx.events.ResizeEvent;
 	import mx.resources.ResourceManager;
 	import mx.utils.ObjectUtil;
+	
+	import spark.components.List;
+	import spark.events.IndexChangeEvent;
+	
 	import org.bigbluebutton.model.IUserSession;
 	import org.bigbluebutton.model.IUserUISession;
 	import org.bigbluebutton.model.User;
@@ -17,9 +23,10 @@ package org.bigbluebutton.view.navigation.pages.chatrooms {
 	import org.bigbluebutton.view.navigation.pages.TransitionAnimationENUM;
 	import org.bigbluebutton.view.navigation.pages.splitsettings.SplitViewEvent;
 	import org.osflash.signals.ISignal;
+	
 	import robotlegs.bender.bundles.mvcs.Mediator;
-	import spark.components.List;
-	import spark.events.IndexChangeEvent;
+
+	use namespace mx_internal;
 	
 	public class ChatRoomsViewMediator extends Mediator {
 		
