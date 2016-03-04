@@ -22,8 +22,6 @@
 	<fx:Script>
 		<![CDATA[
 			import com.adobe.utils.LocaleUtil;
-			import com.juankpro.ane.localnotif.Notification;
-			import com.juankpro.ane.localnotif.NotificationManager;
 			import flash.system.Capabilities;
 			import mx.core.FlexGlobals;
 			import mx.events.FlexEvent;
